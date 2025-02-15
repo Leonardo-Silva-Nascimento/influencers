@@ -11,11 +11,11 @@ cp .env.example .env
 Depois, deve verificar se as configurações do banco de dados e JWT estão corretas no .env:
 
 DB_CONNECTION=mysql
-DB_HOST=mysql
+DB_HOST=
 DB_PORT=3306
 DB_DATABASE=nome_do_banco
 DB_USERNAME=root
-DB_PASSWORD=root
+DB_PASSWORD=
 
 JWT_SECRET=
 
