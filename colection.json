@@ -1,0 +1,84 @@
+{
+    "info": {
+        "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+        "name": "API Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth - Register",
+            "request": {
+                "method": "POST",
+                "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/register",
+                    "host": ["{{base_url}}"],
+                    "path": ["register"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"123456\"}"
+                }
+            }
+        },
+        {
+            "name": "Auth - Login",
+            "request": {
+                "method": "POST",
+                "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/login",
+                    "host": ["{{base_url}}"],
+                    "path": ["login"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"email\":\"john@example.com\",\"password\":\"123456\"}"
+                }
+            }
+        },
+        {
+            "name": "Influencer - Create",
+            "request": {
+                "method": "POST",
+                "header": [
+                    { "key": "Content-Type", "value": "application/json" },
+                    { "key": "Authorization", "value": "Bearer {{token}}" }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/createInfluencer",
+                    "host": ["{{base_url}}"],
+                    "path": ["createInfluencer"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"Influencer Name\",\"insta_user\":\"@insta_handle\",\"follows\":10000,\"category\":\"Tech\"}"
+                }
+            }
+        },
+        {
+            "name": "Campaign - Create",
+            "request": {
+                "method": "POST",
+                "header": [
+                    { "key": "Content-Type", "value": "application/json" },
+                    { "key": "Authorization", "value": "Bearer {{token}}" }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/createCampaign",
+                    "host": ["{{base_url}}"],
+                    "path": ["createCampaign"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"Campaign Name\",\"influencers\":[1,2,3],\"description\":\"Campaign Description\",\"budget\":5000,\"start_date\":\"2025-02-01\",\"end_date\":\"2025-02-28\"}"
+                }
+            }
+        }
+        
+    ]
+}
